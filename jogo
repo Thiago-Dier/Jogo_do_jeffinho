@@ -1,0 +1,82 @@
+programa
+{
+	inclua biblioteca Util --> u
+	inclua biblioteca Texto
+ --> t
+	
+	cadeia opcao
+	cadeia armadura
+	inteiro vida = 3
+	inteiro n_dados = u.sorteia(1,6)
+	inteiro n_casas = 20
+	cadeia posicao 
+	logico duracao
+	
+	funcao inicio()
+	{
+		u.aguarde (500)
+		titulo()
+		u.aguarde (500)
+		escreva_lento("Voce ja conhece a historia do Enter the Gungeon Showcase Edition? (S) ou (N) \n", 50)
+		leia (opcao)
+
+		se (opcao == "s" ou opcao == "S"){
+			escreva_lento("\nEntendido, entao voce ja pode ir pra historia principal sem delongas", 50)
+		}
+
+		senao se (opcao == "n" ou opcao == "N"){
+			escreva_lento("Entendido, entao voce precisa saber o que houve antes desse acontecimento\n", 50)
+			escreva_lento("Ha dois bimestres atras, um soldado chamado Marino saiu em uma missao intergalatica\n", 50)
+			escreva_lento("Seu objetivo era achar BWJOS, o livro com apenas uma frase, em busca do conhecimento absoluto\n", 50)
+			escreva_lento("Apos algumas batalhas epicas, Marino encontrou o livro e obteve o conhecimento absoluto\n", 50)
+			escreva_lento("Marino aproveitou esse tempo para refletir sobre a vida com todo seu conhecimento\n", 50)
+			escreva_lento("Agora voce ja pode ir pra historia principal\n", 50)
+		}
+
+		u.aguarde(500)
+		limpa()
+		escreva_lento("Com o passar desses bimestres, o BWJOS ganhou uma segunda ediçao, e Marino ficou interessado nele\n", 50)
+		escreva_lento("Mas para conseguir, Marino precisa jogar o jogo Tabuleiro da Vida, com desafios que vao alem de sua sabedoria\n", 50)
+		escreva_lento("Para isso, Marino deve escolher entre duas armaduras:\n", 50)
+		escreva_lento("Armadura Azul: Vantagem = +1 Vida\n", 50)
+		escreva_lento("Armadura Vermelha: Vantagem = Numero dos dados +2\n", 50)
+		escreva_lento("Qual voce ira escolher? [A]zul ou [V]ermelho \n", 50)
+		leia (armadura)
+
+		se (armadura == "A" ou armadura == "a"){
+			escreva_lento("Voce escolheu a armadura azul, boa escolha\n", 50)
+			escreva_lento("Agora voce tem uma vida a mais", 50)
+			vida += 1
+		}
+
+		senao se (armadura == "V" ou armadura == "v"){
+			escreva_lento("Voce escolheu a armadura vermelha, boa escolha\n", 50)
+			escreva_lento("Agora o numero do dado que cair, sera somado +2", 50)
+			n_dados += 2
+		}
+
+		posicao = "Inicio"
+
+		enquanto (posicao == "Inicio"){
+			duracao = verdadeiro
+		
+		}
+	}
+	funcao escreva_lento(cadeia texto, inteiro velocidade){
+
+		para(inteiro i=0; i < t.numero_caracteres(texto); i++){
+			escreva(t.obter_caracter(texto, i))
+			u.aguarde(velocidade)
+		}
+	}
+
+	funcao titulo() {
+escreva(" __   .__                ________                                                  \n")
+escreva("\\_   _____/  ____  _/  |_   ____  _______  _/  |_ |  |__    ____    /  _____/  __ __   ____     ____    ____    ____    ____   \n")
+escreva(" |    __)_  /    \\ \\   __\\_/ __ \\ \\_  __ \\ \\   __\\|  |  \\ _/ __ \\  /   \\  ___ |  |  \\ /    \\   / ___\\ _/ __ \\  /  _ \\  /    \\  \n")
+escreva(" |        \\|   |  \\ |  |  \\  ___/  |  | \\/  |  |  |   Y  \\\\  ___/  \\    \\_\\  \\|  |  /|   |  \\ / /_/  >\\  ___/ (  <_> )|   |  \\ \n")
+escreva("/_______  /|___|  / |__|   \\___  > |__|     |__|  |___|  / \\___  >  \\______  /|____/ |___|  / \\___  /  \\___  > \\____/ |___|  / \n")
+escreva("        \\/      \\/             \\/                      \\/      \\/          \\/             \\/ /_____/       \\/              \\/  \n")
+escreva("\n")
+	}
+}
