@@ -1,15 +1,12 @@
 programa
 {
 	inclua biblioteca Util --> u
-	inclua biblioteca Texto
- --> t
+	inclua biblioteca Texto --> t
 	
-	cadeia opcao
-	cadeia armadura
+	cadeia opcao, armadura, posicao, duvida
 	inteiro vida = 3
 	inteiro n_dados = u.sorteia(1,6)
 	inteiro n_casas = 20
-	cadeia posicao 
 	logico duracao
 	
 	funcao inicio()
@@ -55,12 +52,33 @@ programa
 			n_dados += 2
 		}
 
-		posicao = "Inicio"
 
-		enquanto (posicao == "Inicio"){
-			duracao = verdadeiro
-		
+
+		limpa()
+
+		escreva_lento("Agora que voce ja tem sua armadura, vamos saber as regras do jogo:\n", 50)
+		escreva_lento("0°: O jogo tera 20 casas a serem andadas, voce anda conforme o numero do dado;\n", 50) u.aguarde(200)
+		escreva_lento("1°: Se voce escolheu a armadura vermelha, o numero do dado eh somado com dois;\n", 50) u.aguarde(200)
+		escreva_lento("2°: Se voce cair em uma casa de numero par, nada acontece e voce joga novamente;\n", 50) u.aguarde(200)
+		escreva_lento("3°: Se voce cair em uma casa de numero impar, tera que responder uma pergunta;\n", 50) u.aguarde(200)
+		escreva_lento("4°: Se voce errar a pergunta, voce volta 3 casas e perde uma vida;\n", 50) u.aguarde(200)
+		escreva_lento("5°: Se voce chegar na casa de numero 19, tera que enfrentar o chefao final;\n", 50) u.aguarde(200)
+		escreva_lento("6°: Caso perca todas as suas vidas, voce morre e sera esquecido para sempre;\n", 50) u.aguarde(200)
+		escreva_lento("7°: Se voce ganhar, tera para voce a segunda ediçao do BWJOS;\n", 50) u.aguarde(200)
+		escreva_lento("Alguma duvida? [S]im ou [N]ao ", 50) u.aguarde(200)
+		leia (duvida)
+
+		se (duvida == "S" ou duvida == "s"){
+			 escreva_lento ("Nao importa, vamos logo para o jogo", 50)
 		}
+
+		senao se (duvida == "N" ou duvida == "n"){
+			escreva_lento ("Otimo! Entao vamos para o jogo", 50)
+		}
+
+		
+
+		
 	}
 	funcao escreva_lento(cadeia texto, inteiro velocidade){
 
@@ -71,12 +89,19 @@ programa
 	}
 
 	funcao titulo() {
-escreva(" __   .__                ________                                                  \n")
-escreva("\\_   _____/  ____  _/  |_   ____  _______  _/  |_ |  |__    ____    /  _____/  __ __   ____     ____    ____    ____    ____   \n")
-escreva(" |    __)_  /    \\ \\   __\\_/ __ \\ \\_  __ \\ \\   __\\|  |  \\ _/ __ \\  /   \\  ___ |  |  \\ /    \\   / ___\\ _/ __ \\  /  _ \\  /    \\  \n")
-escreva(" |        \\|   |  \\ |  |  \\  ___/  |  | \\/  |  |  |   Y  \\\\  ___/  \\    \\_\\  \\|  |  /|   |  \\ / /_/  >\\  ___/ (  <_> )|   |  \\ \n")
-escreva("/_______  /|___|  / |__|   \\___  > |__|     |__|  |___|  / \\___  >  \\______  /|____/ |___|  / \\___  /  \\___  > \\____/ |___|  / \n")
-escreva("        \\/      \\/             \\/                      \\/      \\/          \\/             \\/ /_____/       \\/              \\/  \n")
-escreva("\n")
+    escreva_lento(" ______       _              _   _                \n", 15)
+    escreva_lento("|  ____|     | |            | | | |               \n", 15)
+    escreva_lento("| |__   _ __ | |_ ___ _ __  | |_| |__   ___       \n", 15)
+    escreva_lento("|  __| | '_ \\| __/ _ \\ '__| | __| '_ \\ / _ \\     \n", 15)
+    escreva_lento("| |____| | | | ||  __/ |    | |_| | | |  __/       \n", 15)
+    escreva_lento("|______|_| |_|\\__\\___|_|     \\__|_| |_|\\___| ___ \n", 15)
+    escreva_lento(" / ____|                                    |__ \\ \n", 15)
+    escreva_lento("| |  __ _   _ _ __   __ _  ___  ___  _ __      ) |\n", 15)
+    escreva_lento("| | |_ | | | | '_ \\ / _` |/ _ \\/ _ \\| '_ \\    / / \n", 15)
+    escreva_lento("| |__| | |_| | | | | (_| |  __/ (_) | | | |  / /_ \n", 15)
+    escreva_lento(" \\_____|\\__,_|_| |_|\\__, |\\___|\\___/|_| |_| |____| \n", 15)
+    escreva_lento("                     __/ |                        \n", 15)
+    escreva_lento("                    |___/                         \n", 15)
+    escreva ("\n")
 	}
 }
