@@ -5,9 +5,10 @@ programa
 	
 	cadeia opcao, armadura, posicao, duvida
 	inteiro vida = 3
-	inteiro n_dados = u.sorteia(1,6)
 	inteiro n_casas = 20
 	logico duracao
+	inteiro dado = u.sorteia(1, 6)
+	inteiro casa = 0
 	
 	funcao inicio()
 	{
@@ -49,7 +50,6 @@ programa
 		senao se (armadura == "V" ou armadura == "v"){
 			escreva_lento("Voce escolheu a armadura vermelha, boa escolha\n", 50)
 			escreva_lento("Agora o numero do dado que cair, sera somado +2", 50)
-			n_dados += 2
 		}
 
 
@@ -69,27 +69,18 @@ programa
 		leia (duvida)
 
 		se (duvida == "S" ou duvida == "s"){
-			 escreva_lento ("Nao importa, vamos logo para o jogo", 50)
+			 escreva_lento ("Nao importa, vamos logo para o jogo\n", 50)
+			 duracao = verdadeiro
 		}
 
 		senao se (duvida == "N" ou duvida == "n"){
-			escreva_lento ("Otimo! Entao vamos para o jogo", 50)
+			escreva_lento ("Otimo! Entao vamos para o jogo\n", 50)
+			duracao = verdadeiro
 		}
 
-	   inteiro dado
-        cadeia lancar
-
-
-        escreva("\nPressione d para lançar o dado...")
-        leia(lancar) // Aguarda o usuário pressionar ENTER
-
-
-	   se (lancar=="d" ou lancar =="D"){
-	   	dado = u.sorteia(1, 6)
-	   	escreva("Você lançou o dado e tirou: ", dado, "\n")
-	   }
-
-
+		enquanto (duracao == verdadeiro) {
+			rodada()
+		}
 		
 	}
 	funcao escreva_lento(cadeia texto, inteiro velocidade){
@@ -116,4 +107,331 @@ programa
     escreva_lento("                    |_/                         \n", 15)
     escreva ("\n")
 	}
+
+	funcao joga_dado1() {
+		
+   escreva("@@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@.:.\n")
+   escreva(" @@#:                                  :#@@ \n")
+   escreva("@@-.                                    .:@@\n")
+   escreva("@*                                        +@\n")
+   escreva("@+  .....                    ....         =@\n")
+   escreva("@+ ..................       ..............=@\n")
+   escreva("@+  ..... ....... ..        .....  .......=@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                  ....                  =@\n")
+   escreva("@+              ..=%@@@@@=.              .=@\n")
+   escreva("@=.......      ..:@@@@@@@@:......       ..=@\n")
+   escreva("@+......        .:@@@@@@@@:.....        ..=@\n")
+   escreva("@+               .=@@@@@@=.               =@\n")
+   escreva("@+                 ......                 =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+ ..................       ..............=@\n")
+   escreva("@+ ..................       ..............=@\n")
+   escreva("@+   ..                      ...          =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@*                                        +@\n")
+   escreva("@@:                                      :@@\n")
+   escreva(" @@#:....      ..................      :#@%-\n")
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
+   u.aguarde(500)
+  }
+
+  	funcao joga_dado2() {
+  		
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@.:.\n")
+   escreva(" @@#:                                  :#@@ \n")
+   escreva("@@-.                                    .:@@\n")
+   escreva("@*                                        +@\n")
+   escreva("@+  ......=%@*:.             ....         =@\n")
+   escreva("@+ .....+@@@@@@%:....       ..............=@\n")
+   escreva("@+  ....@@@@@@@@= ..        .....  .......=@\n")
+   escreva("@+     .#@@@@@@@-                         =@\n")
+   escreva("@+      .+@@@@#:.                         =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+              ..... .  ..              .=@\n")
+   escreva("@=.......      ..................       ..=@\n")
+   escreva("@+......        ................        ..=@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                         .:*@@@@+.      =@\n")
+   escreva("@+ ..................      -@@@@@@@#......=@\n")
+   escreva("@+ ..................      =@@@@@@@@:.....=@\n")
+   escreva("@+   ..                    :%@@@@@@+.     =@\n")
+   escreva("@+                          .:*@%=..      =@\n")
+   escreva("@*                                        +@\n")
+   escreva("@@:                                      :@@\n")
+   escreva(" @@#:....      ..................      :#@%-\n")
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
+   u.aguarde(500)
+  }
+
+  	funcao joga_dado3() {
+  	
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@.:.\n")
+   escreva(" @@#:                                  :#@@ \n")
+   escreva("@@-.                                    .:@@\n")
+   escreva("@*                                        +@\n")
+   escreva("@+  .....                   .:*@%=..      =@\n")
+   escreva("@+ ..................      :#@@@@@@+......=@\n")
+   escreva("@+  ..... ....... ..       =@@@@@@@@:.....=@\n")
+   escreva("@+                         -@@@@@@@#.     =@\n")
+   escreva("@+                         .:#@@@@+.      =@\n")
+   escreva("@+                  ....                  =@\n")
+   escreva("@+              ..=%@@@@@=.              .=@\n")
+   escreva("@=.......      ..:@@@@@@@@:......       ..=@\n")
+   escreva("@+......        .:@@@@@@@@:.....        ..=@\n")
+   escreva("@+               .=@@@@@@=.               =@\n")
+   escreva("@+                 ......                 =@\n")
+   escreva("@+      .+%@@@#:.                         =@\n")
+   escreva("@+ .....#@@@@@@@-....       ..............=@\n")
+   escreva("@+ .....@@@@@@@@=....       ..............=@\n")
+   escreva("@+   ...+@@@@@@%:            ...          =@\n")
+   escreva("@+      ..=%@*:.                          =@\n")
+   escreva("@*                                        +@\n")
+   escreva("@@:                                      :@@\n")
+   escreva(" @@#:....      ..................      :#@%-\n")
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
+   u.aguarde(500)
+  }
+
+  	funcao joga_dado4() {
+  		
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@.:.\n")
+   escreva(" @@#:                                  :#@@ \n")
+   escreva("@@-.   ..=*+:.                .:+*=..   .:@@\n")
+   escreva("@*    .%@@@@@@-              :@@@@@@%.    +@\n")
+   escreva("@+  ..*@@@@@@@@.            .@@@@@@@@#.   =@\n")
+   escreva("@+ ...+@@@@@@@%......       .%@@@@@@@*....=@\n")
+   escreva("@+  ...=@@@@@*... ..        ..*@@@@@=.....=@\n")
+   escreva("@+      .....                  .....      =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+              ..... .  ..              .=@\n")
+   escreva("@=.......      ..................       ..=@\n")
+   escreva("@+......        ................        ..=@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+ ..................       ..............=@\n")
+   escreva("@+ ....=%@@@@*.......       ..+@@@@%=.....=@\n")
+   escreva("@+   .+@@@@@@@%.            .%@@@@@@@*.   =@\n")
+   escreva("@+   .*@@@@@@@@.            .@@@@@@@@#.   =@\n")
+   escreva("@*    .%@@@@@@-              :@@@@@@%.    +@\n")
+   escreva("@@:    ..=*+:.                .:+*=..    :@@\n")
+   escreva(" @@#:....      ..................      :#@%-\n")
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
+   u.aguarde(500)
+  }
+
+  funcao joga_dado5() {
+  	
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@.:.\n")
+   escreva(" @@#:                                  :#@@ \n")
+   escreva("@@-.   ..=*+:.                .:+*=..   .:@@\n")
+   escreva("@*    .%@@@@@@-              :@@@@@@%.    +@\n")
+   escreva("@+  ..*@@@@@@@@.            .@@@@@@@@#.   =@\n")
+   escreva("@+ ...+@@@@@@@%......       .%@@@@@@@*....=@\n")
+   escreva("@+  ...=@@@@@*... ..        ..*@@@@@=.....=@\n")
+   escreva("@+      .....                  .....      =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+                  ....                  =@\n")
+   escreva("@+              ..=%@@@@@=.              .=@\n")
+   escreva("@=.......      ..:@@@@@@@@:......       ..=@\n")
+   escreva("@+......        .:@@@@@@@@:.....        ..=@\n")
+   escreva("@+               .=@@@@@@=.               =@\n")
+   escreva("@+                 ......                 =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+ ..................       ..............=@\n")
+   escreva("@+ ....=%@@@@*.......       ..+@@@@%=.....=@\n")
+   escreva("@+   .+@@@@@@@%.            .%@@@@@@@*.   =@\n")
+   escreva("@+   .*@@@@@@@@.            .@@@@@@@@#.   =@\n")
+   escreva("@*    .%@@@@@@-              :@@@@@@%.    +@\n")
+   escreva("@@:    ..=*+:.                .:+*=..    :@@\n")
+   escreva(" @@#:....      ..................      :#@%-\n")
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: \n")
+   u.aguarde(500)
+  }
+
+  	funcao joga_dado6() {
+  		
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@.:.\n")
+   escreva(" @@#:                                  :#@@ \n")
+   escreva("@@-.   ..=*+:.                .:+*=..   .:@@\n")
+   escreva("@*    .%@@@@@@-              :@@@@@@%.    +@\n")
+   escreva("@+  ..*@@@@@@@@.            .@@@@@@@@#.   =@\n")
+   escreva("@+ ...+@@@@@@@%......       .%@@@@@@@*....=@\n")
+   escreva("@+  ...=@@@@@*... ..        ..*@@@@@=.....=@\n")
+   escreva("@+      .....                  .....      =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+       ...                    ...       =@\n")
+   escreva("@+    .*@@@@@%: ..... .  ..  .%@@@@@#.   .=@\n")
+   escreva("@=....*@@@@@@@@..............@@@@@@@@*. ..=@\n")
+   escreva("@+....*@@@@@@@@..............@@@@@@@@*. ..=@\n")
+   escreva("@+    .*@@@@@%:              .%@@@@@#.    =@\n")
+   escreva("@+     ...:...                ...:...     =@\n")
+   escreva("@+                                        =@\n")
+   escreva("@+ ..................       ..............=@\n")
+   escreva("@+ ....=%@@@@*.......       ..+@@@@%=.....=@\n")
+   escreva("@+   .+@@@@@@@%.            .%@@@@@@@*.   =@\n")
+   escreva("@+   .*@@@@@@@@.            .@@@@@@@@#.   =@\n")
+   escreva("@*    .%@@@@@@-              :@@@@@@%.    +@\n")
+   escreva("@@:    ..=*+:.                .:+*=..    :@@\n")
+   escreva(" @@#:....      ..................      :#@%-\n")
+   escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
+   u.aguarde(500)
+  }
+
+  funcao lancamento() {
+
+  	escolha (dado) {
+  		
+  		caso 1:
+  		joga_dado1()
+  		u.aguarde(500)
+  		limpa()
+  		pare
+
+  		caso 2:
+  		joga_dado2()
+  		u.aguarde(500)
+  		limpa()
+  		pare
+
+  		caso 3:
+  		joga_dado3()
+  		u.aguarde(500)
+  		limpa()
+  		pare
+
+  		caso 4:
+  		joga_dado4()
+  		u.aguarde(500)
+  		limpa()
+  		pare
+
+  		caso 5:
+  		joga_dado5()
+  		u.aguarde(500)
+  		limpa()
+  		pare
+
+  		caso 6:
+  		joga_dado6()
+  		u.aguarde(500)
+  		limpa()
+  		pare
+  	}	
+  	
+  }
+
+  funcao rodada(){
+  	escreva_lento("Voce tem ", 50)
+  	escreva(vida)
+  	escreva_lento(" vidas restantes\n", 50)
+  	escreva_lento("Voce joga o dado\n", 50)
+  	lancamento()
+  	escreva_lento("Voce tirou ", 50)
+  	escreva(dado)
+  	escreva_lento(", pode andar esse numero de casas\n", 50)
+  	casa += dado
+  	limpa()
+  	u.aguarde(500)
+  	verifica_casa()
+  }
+
+  funcao verifica_casa() {
+
+  	se (casa % 2 == 0){
+  		escreva_lento("Nao ocorreu nada, podemos prosseguir", 50)
+  	}
+
+  	senao {
+  		escreva_lento("Agora voce tera que responder uma pergunta", 50)
+  	}
+  	
+  }
+
+  funcao pergunte(){
+  	inteiro pergunta = u.sorteia(1, 20)
+  	inteiro resposta
+  	escolha (pergunta) {
+
+  		caso 1:
+  		escreva_lento("Qual opcao abaixo nunca devemos escrever uma variavel?\n", 50)
+  		escreva_lento("[1] dias_contados\n", 50)
+  		escreva_lento("[2] salamesadia\n", 50)
+  		escreva_lento("[3] nomeUsuario\n", 50)
+  		leia (resposta)
+
+  		se (resposta == 1){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		senao se (resposta == 2){
+  			escreva ("Resposta correta")
+  		}
+
+  		senao se (resposta == 3){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		caso 2:
+  		escreva_lento("Na atividade 3 do 2° bimestre, na questao 12, que alimento custava 1000 reais?\n", 50)
+  		escreva_lento("[1] Semente dos Deuses\n", 50)
+  		escreva_lento("[2] Hamburguer de Siri\n", 50)
+  		escreva_lento("[3] Sanduiche Supremo\n", 50)
+  		leia (resposta)
+
+  		se (resposta == 1){
+  			escreva ("Resposta correta")
+  		}
+
+  		senao se(resposta == 2){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		senao se(resposta == 3){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		caso 3:
+  		escreva_lento("Qual o nome da cachorrinha do professor Jefferson?\n", 50)
+  		escreva_lento("[1] Bela\n", 50)
+  		escreva_lento("[2] Gelatina\n", 50)
+  		escreva_lento("[3] Chica\n", 50)
+  		leia (resposta)
+
+  		se (resposta == 1){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		senao se(resposta == 2){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		senao se(resposta == 3){
+  			escreva ("Resposta correta")
+  		}
+
+  		caso 4:
+  		escreva_lento("Porque o programador nunca encontrou sua namorada?\n", 50)
+  		escreva_lento("[1] Porque o carro dele quebrou\n", 50)
+  		escreva_lento("[2] Porque ele foi na mesa 0 e ela na mesa 1\n", 50)
+  		escreva_lento("[1] Porque ele teve dor de barriga e nao foi\n", 50)
+  		leia (resposta)
+
+  		se (resposta == 1){
+  			escreva ("Resposta incorreta")
+  		}
+
+  		senao se(resposta == 2){
+  			escreva ("Resposta correta")
+  		}
+
+  		senao se(resposta == 3){
+  			escreva ("Resposta incorreta")
+  		}
+  	}
+  }
 }
