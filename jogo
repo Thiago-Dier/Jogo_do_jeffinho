@@ -1,3 +1,4 @@
+
 programa
 {
 	inclua biblioteca Util --> u
@@ -9,6 +10,8 @@ programa
 	logico duracao
 	inteiro dado = u.sorteia(1, 6)
 	inteiro casa = 0
+	inteiro cas = 0
+	cadeia resp
 	
 	funcao inicio()
 	{
@@ -80,6 +83,14 @@ programa
 
 		enquanto (duracao == verdadeiro) {
 			rodada()
+
+			se ( casa >= 20 ){
+				duracao = falso
+			}
+
+			se ( duracao == falso ){
+				escreva_lento("Parabens! Voce Ganhou!", 50)
+			}
 		}
 		
 	}
@@ -283,7 +294,7 @@ programa
   }
 
   funcao lancamento() {
-
+	dado = u.sorteia(1, 6)
   	escolha (dado) {
   		
   		caso 1:
@@ -329,6 +340,8 @@ programa
   	escreva_lento("Voce tem ", 50)
   	escreva(vida)
   	escreva_lento(" vidas restantes\n", 50)
+  	escreva_lento("Voce esta na posicao ", 50)
+  	escreva(casa ,"\n")
   	escreva_lento("Voce joga o dado\n", 50)
   	lancamento()
   	escreva_lento("Voce tirou ", 50)
@@ -338,22 +351,34 @@ programa
   	limpa()
   	u.aguarde(500)
   	verifica_casa()
+
+  	se ( cas == 1 ) {
+  		rodada()
+  	}
+
+  	senao {
+  		pergunte ()
+  		
+  	}
   }
 
   funcao verifica_casa() {
 
   	se (casa % 2 == 0){
-  		escreva_lento("Nao ocorreu nada, podemos prosseguir", 50)
+  		escreva_lento("Nao ocorreu nada, podemos prosseguir\n", 50)
+  		 cas = 1
   	}
 
   	senao {
-  		escreva_lento("Agora voce tera que responder uma pergunta", 50)
+  		escreva_lento("Agora voce tera que responder uma pergunta\n", 50)
+  		 cas = 2
+  		
   	}
   	
   }
 
   funcao pergunte(){
-  	inteiro pergunta = u.sorteia(1, 20)
+  	inteiro pergunta = u.sorteia(1, 5)
   	inteiro resposta
   	escolha (pergunta) {
 
@@ -364,16 +389,17 @@ programa
   		escreva_lento("[3] nomeUsuario\n", 50)
   		leia (resposta)
 
-  		se (resposta == 1){
-  			escreva ("Resposta incorreta")
+  		 se (resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Essa foi facil!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
   		}
 
-  		senao se (resposta == 2){
-  			escreva ("Resposta correta")
-  		}
-
-  		senao se (resposta == 3){
+  		senao{
   			escreva ("Resposta incorreta")
+  			casa = casa - 3
   		}
 
   		caso 2:
@@ -384,16 +410,18 @@ programa
   		leia (resposta)
 
   		se (resposta == 1){
-  			escreva ("Resposta correta")
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Eh um bom preço nao acha?\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
   		}
 
-  		senao se(resposta == 2){
+  		senao {
   			escreva ("Resposta incorreta")
+  			casa = casa - 3
   		}
 
-  		senao se(resposta == 3){
-  			escreva ("Resposta incorreta")
-  		}
 
   		caso 3:
   		escreva_lento("Qual o nome da cachorrinha do professor Jefferson?\n", 50)
@@ -402,16 +430,17 @@ programa
   		escreva_lento("[3] Chica\n", 50)
   		leia (resposta)
 
-  		se (resposta == 1){
-  			escreva ("Resposta incorreta")
+  		se (resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Que nome fofo XD!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
   		}
 
-  		senao se(resposta == 2){
-  			escreva ("Resposta incorreta")
-  		}
-
-  		senao se(resposta == 3){
-  			escreva ("Resposta correta")
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			casa = casa - 3
   		}
 
   		caso 4:
@@ -421,17 +450,45 @@ programa
   		escreva_lento("[1] Porque ele teve dor de barriga e nao foi\n", 50)
   		leia (resposta)
 
-  		se (resposta == 1){
-  			escreva ("Resposta incorreta")
+  		 se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Hahaha essa eh a melhor piada!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
   		}
 
-  		senao se(resposta == 2){
-  			escreva ("Resposta correta")
+  		senao {
+  			escreva ("Resposta incorreta")
+  			casa = casa - 3
   		}
 
-  		senao se(resposta == 3){
+  		caso 5:
+  		escreva_lento("Para saber exatamente como um codigo esta sendo executado, usamos uma ferramenta denominada de:\n", 50)
+  		escreva_lento("[1] Sapatoviski\n", 50)
+  		escreva_lento("[2] Funcao Percorrer Codigo\n", 50)
+  		escreva_lento("[3] Olhometro\n", 50)
+  		leia (resposta)
+
+  		 se(resposta == 1){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Ninguem supera ele!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
   			escreva ("Resposta incorreta")
+  			casa = casa - 3
   		}
   	}
   }
+
+	funcao prossiga(){
+		se ( resp == "CERTO" ){
+			rodada()
+		}
+	}
+  
 }
