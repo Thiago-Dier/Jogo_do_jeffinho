@@ -1,4 +1,5 @@
 
+
 programa
 {
 	inclua biblioteca Util --> u
@@ -6,7 +7,7 @@ programa
 	
 	cadeia opcao, armadura, posicao, duvida
 	inteiro vida = 3
-	inteiro n_casas = 20
+	inteiro n_casas = 25
 	logico duracao
 	inteiro dado = u.sorteia(1, 6)
 	inteiro casa = 0
@@ -18,18 +19,18 @@ programa
 		u.aguarde (500)
 		titulo()
 		u.aguarde (500)
-		escreva_lento("Voce ja conhece a historia do Enter the Gungeon Showcase Edition? (S) ou (N) \n", 50)
+		escreva_lento("Você ja conhece a história do Enter the Gungeon Showcase Edition? (S) ou (N) \n", 50)
 		leia (opcao)
 
 		se (opcao == "s" ou opcao == "S"){
-			escreva_lento("\nEntendido, entao voce ja pode ir pra historia principal sem delongas", 50)
+			escreva_lento("\nEntendido, entao você ja pode ir pra história principal sem delongas", 50)
 		}
 
 		senao se (opcao == "n" ou opcao == "N"){
-			escreva_lento("Entendido, entao voce precisa saber o que houve antes desse acontecimento\n", 50)
-			escreva_lento("Ha dois bimestres atras, um soldado chamado Marino saiu em uma missao intergalatica\n", 50)
+			escreva_lento("Entendido, entao você precisa saber o que houve antes desse acontecimento\n", 50)
+			escreva_lento("Há dois bimestres atras, um soldado chamado Marino saiu em uma missao intergalatica\n", 50)
 			escreva_lento("Seu objetivo era achar BWJOS, o livro com apenas uma frase, em busca do conhecimento absoluto\n", 50)
-			escreva_lento("Apos algumas batalhas epicas, Marino encontrou o livro e obteve o conhecimento absoluto\n", 50)
+			escreva_lento("Após algumas batalhas epicas, Marino encontrou o livro e obteve o conhecimento absoluto\n", 50)
 			escreva_lento("Marino aproveitou esse tempo para refletir sobre a vida com todo seu conhecimento\n", 50)
 			escreva_lento("Agora voce ja pode ir pra historia principal\n", 50)
 		}
@@ -37,59 +38,58 @@ programa
 		u.aguarde(500)
 		limpa()
 		escreva_lento("Com o passar desses bimestres, o BWJOS ganhou uma segunda ediçao, e Marino ficou interessado nele\n", 50)
-		escreva_lento("Mas para conseguir, Marino precisa jogar o jogo Tabuleiro da Vida, com desafios que vao alem de sua sabedoria\n", 50)
+		escreva_lento("Mas para conseguir, Marino precisa jogar o jogo Tabuleiro da Vida, com desafios que vao além de sua sabedoria\n", 50)
 		escreva_lento("Para isso, Marino deve escolher entre duas armaduras:\n", 50)
 		escreva_lento("Armadura Azul: Vantagem = +1 Vida\n", 50)
-		escreva_lento("Armadura Vermelha: Vantagem = Numero dos dados +2\n", 50)
+		escreva_lento("Armadura Vermelha: Vantagem = Alguma coisa aleatória\n", 50)
 		escreva_lento("Qual voce ira escolher? [A]zul ou [V]ermelho \n", 50)
 		leia (armadura)
 
 		se (armadura == "A" ou armadura == "a"){
-			escreva_lento("Voce escolheu a armadura azul, boa escolha\n", 50)
-			escreva_lento("Agora voce tem uma vida a mais", 50)
+			escreva_lento("Você escolheu a armadura azul, boa escolha\n", 50)
+			escreva_lento("Agora você tem uma vida a mais", 50)
 			vida += 1
 		}
 
 		senao se (armadura == "V" ou armadura == "v"){
-			escreva_lento("Voce escolheu a armadura vermelha, boa escolha\n", 50)
-			escreva_lento("Agora o numero do dado que cair, sera somado +2", 50)
+			escreva_lento("Você escolheu a armadura vermelha, boa escolha\n", 50)
+			escreva_lento("Você ganhou uma bala Halls, parabéns\n", 50)
 		}
 
 
 
 		limpa()
 
-		escreva_lento("Agora que voce ja tem sua armadura, vamos saber as regras do jogo:\n", 50)
-		escreva_lento("0°: O jogo tera 20 casas a serem andadas, voce anda conforme o numero do dado;\n", 50) u.aguarde(200)
-		escreva_lento("1°: Se voce escolheu a armadura vermelha, o numero do dado eh somado com dois;\n", 50) u.aguarde(200)
-		escreva_lento("2°: Se voce cair em uma casa de numero par, nada acontece e voce joga novamente;\n", 50) u.aguarde(200)
-		escreva_lento("3°: Se voce cair em uma casa de numero impar, tera que responder uma pergunta;\n", 50) u.aguarde(200)
-		escreva_lento("4°: Se voce errar a pergunta, voce volta 3 casas e perde uma vida;\n", 50) u.aguarde(200)
-		escreva_lento("5°: Se voce chegar na casa de numero 19, tera que enfrentar o chefao final;\n", 50) u.aguarde(200)
-		escreva_lento("6°: Caso perca todas as suas vidas, voce morre e sera esquecido para sempre;\n", 50) u.aguarde(200)
-		escreva_lento("7°: Se voce ganhar, tera para voce a segunda ediçao do BWJOS;\n", 50) u.aguarde(200)
-		escreva_lento("Alguma duvida? [S]im ou [N]ao ", 50) u.aguarde(200)
+		escreva_lento("Agora que você ja tem sua armadura, vamos saber as regras do jogo:\n", 50)
+		escreva_lento("1°: O jogo terá 25 casas a serem andadas, você anda conforme o numero do dado;\n", 50) u.aguarde(200)
+		escreva_lento("2°: Se você cair em uma casa de numero par, nada acontece e você joga novamente;\n", 50) u.aguarde(200)
+		escreva_lento("3°: Se você cair em uma casa de numero impar, tera que responder uma pergunta;\n", 50) u.aguarde(200)
+		escreva_lento("4°: Se você errar a pergunta, voce volta 3 casas e perde uma vida;\n", 50) u.aguarde(200)
+		escreva_lento("5°: Se você chegar na casa de numero 19, tera que enfrentar o chefao final;\n", 50) u.aguarde(200)
+		escreva_lento("6°: Caso perca todas as suas vidas, você morre e será esquecido para sempre;\n", 50) u.aguarde(200)
+		escreva_lento("7°: Se você ganhar, tera para você a segunda edição do BWJOS;\n", 50) u.aguarde(200)
+		escreva_lento("Alguma dúvida? [S]im ou [N]ao ", 50) u.aguarde(200)
 		leia (duvida)
 
 		se (duvida == "S" ou duvida == "s"){
-			 escreva_lento ("Nao importa, vamos logo para o jogo\n", 50)
+			 escreva_lento ("Nâo importa, vamos logo para o jogo\n", 50)
 			 duracao = verdadeiro
 		}
 
 		senao se (duvida == "N" ou duvida == "n"){
-			escreva_lento ("Otimo! Entao vamos para o jogo\n", 50)
+			escreva_lento ("Ótimo! Entao vamos para o jogo\n", 50)
 			duracao = verdadeiro
 		}
 
 		enquanto (duracao == verdadeiro) {
 			rodada()
 
-			se ( casa >= 20 ){
+			se ( casa >= 25 ){
 				duracao = falso
 			}
 
 			se ( duracao == falso ){
-				escreva_lento("Parabens! Voce Ganhou!", 50)
+				escreva_lento("Parabéns! Voce Ganhou!", 50)
 			}
 		}
 		
@@ -103,20 +103,7 @@ programa
 	}
 
 	funcao titulo() {
-    escreva_lento(" __       _              _   _                \n", 15)
-    escreva_lento("|  __|     | |            | | | |               \n", 15)
-    escreva_lento("| |_   _ _ | |_ _ _ _  | || |_   __       \n", 15)
-    escreva_lento("|  _| | ' \\| _/ _ \\ '| | _| '_ \\ / _ \\     \n", 15)
-    escreva_lento("| |_| | | | ||  _/ |    | || | | |  _/       \n", 15)
-    escreva_lento("|__|| ||\\_\\_||     \\_|| ||\\_| __ \n", 15)
-    escreva_lento(" / _|                                    |_ \\ \n", 15)
-    escreva_lento("| |  _ _   _ _ _   _ _  __  _  _ __      ) |\n", 15)
-    escreva_lento("| | |_ | | | | '_ \\ / ` |/ _ \\/ _ \\| ' \\    / / \n", 15)
-    escreva_lento("| |_| | || | | | | (| |  _/ () | | | |  / / \n", 15)
-    escreva_lento(" \\__|\\,|| ||\\_, |\\_|\\_/|| || |_| \n", 15)
-    escreva_lento("                     __/ |                        \n", 15)
-    escreva_lento("                    |_/                         \n", 15)
-    escreva ("\n")
+
 	}
 
 	funcao joga_dado1() {
@@ -337,12 +324,12 @@ programa
   }
 
   funcao rodada(){
-  	escreva_lento("Voce tem ", 50)
+  	escreva_lento("Você tem ", 50)
   	escreva(vida)
   	escreva_lento(" vidas restantes\n", 50)
   	escreva_lento("Voce esta na posicao ", 50)
   	escreva(casa ,"\n")
-  	escreva_lento("Voce joga o dado\n", 50)
+  	escreva_lento("Você joga o dado\n", 50)
   	lancamento()
   	escreva_lento("Voce tirou ", 50)
   	escreva(dado)
@@ -365,12 +352,12 @@ programa
   funcao verifica_casa() {
 
   	se (casa % 2 == 0){
-  		escreva_lento("Nao ocorreu nada, podemos prosseguir\n", 50)
+  		escreva_lento("Não ocorreu nada, podemos prosseguir\n", 50)
   		 cas = 1
   	}
 
   	senao {
-  		escreva_lento("Agora voce tera que responder uma pergunta\n", 50)
+  		escreva_lento("Agora você terá que responder uma pergunta\n", 50)
   		 cas = 2
   		
   	}
@@ -383,7 +370,7 @@ programa
   	escolha (pergunta) {
 
   		caso 1:
-  		escreva_lento("Qual opcao abaixo nunca devemos escrever uma variavel?\n", 50)
+  		escreva_lento("Qual opção abaixo nunca devemos escrever uma váriavel?\n", 50)
   		escreva_lento("[1] dias_contados\n", 50)
   		escreva_lento("[2] salamesadia\n", 50)
   		escreva_lento("[3] nomeUsuario\n", 50)
@@ -391,7 +378,7 @@ programa
 
   		 se (resposta == 2){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Essa foi facil!\n", 50)
+  			escreva_lento("Essa foi fácil!\n", 50)
   			resp = "CERTO"
   			prossiga()
   			u.aguarde(2000)
@@ -399,19 +386,20 @@ programa
 
   		senao{
   			escreva ("Resposta incorreta")
+  			resp = "CERTO"
   			casa = casa - 3
   		}
 
   		caso 2:
   		escreva_lento("Na atividade 3 do 2° bimestre, na questao 12, que alimento custava 1000 reais?\n", 50)
   		escreva_lento("[1] Semente dos Deuses\n", 50)
-  		escreva_lento("[2] Hamburguer de Siri\n", 50)
-  		escreva_lento("[3] Sanduiche Supremo\n", 50)
+  		escreva_lento("[2] Hambúrguer de Siri\n", 50)
+  		escreva_lento("[3] Sanduche Supremo\n", 50)
   		leia (resposta)
 
   		se (resposta == 1){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Eh um bom preço nao acha?\n", 50)
+  			escreva_lento("É um bom preço não acha?\n", 50)
   			resp = "CERTO"
   			prossiga()
   			u.aguarde(2000)
@@ -419,6 +407,7 @@ programa
 
   		senao {
   			escreva ("Resposta incorreta")
+  			resp = "CERTO"
   			casa = casa - 3
   		}
 
@@ -440,6 +429,7 @@ programa
 
   		senao {
   			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
   			casa = casa - 3
   		}
 
@@ -447,12 +437,12 @@ programa
   		escreva_lento("Porque o programador nunca encontrou sua namorada?\n", 50)
   		escreva_lento("[1] Porque o carro dele quebrou\n", 50)
   		escreva_lento("[2] Porque ele foi na mesa 0 e ela na mesa 1\n", 50)
-  		escreva_lento("[1] Porque ele teve dor de barriga e nao foi\n", 50)
+  		escreva_lento("[3] Porque ele teve dor de barriga e não foi\n", 50)
   		leia (resposta)
 
   		 se(resposta == 2){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Hahaha essa eh a melhor piada!\n", 50)
+  			escreva_lento("Hahaha essa é a melhor piada!\n", 50)
   			resp = "CERTO"
   			prossiga()
   			u.aguarde(2000)
@@ -460,26 +450,196 @@ programa
 
   		senao {
   			escreva ("Resposta incorreta")
+  			resp = "CERTO"
   			casa = casa - 3
   		}
 
   		caso 5:
   		escreva_lento("Para saber exatamente como um codigo esta sendo executado, usamos uma ferramenta denominada de:\n", 50)
   		escreva_lento("[1] Sapatoviski\n", 50)
-  		escreva_lento("[2] Funcao Percorrer Codigo\n", 50)
-  		escreva_lento("[3] Olhometro\n", 50)
+  		escreva_lento("[2] Funcao Percorrer Código\n", 50)
+  		escreva_lento("[3] Olhômetro\n", 50)
   		leia (resposta)
 
   		 se(resposta == 1){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Ninguem supera ele!\n", 50)
+  			escreva_lento("Ninguém supera ele!\n", 50)
   			resp = "CERTO"
   			prossiga()
   			u.aguarde(2000)
   		}
 
   		senao {
-  			escreva ("Resposta incorreta")
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 6:
+  		escreva_lento("Quais exemplos de protagonista para o jogo o professor Jefferson deu?\n", 50)
+  		escreva_lento("[1] Uma capivara ou o Luan Santana\n", 50)
+  		escreva_lento("[2] Uma laranja ou a Kim Kardashian\n", 50)
+  		escreva_lento("[3] Uma lagartixa ou o Velho da Havan\n", 50)
+  		leia (resposta)
+
+		se(resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("São ótimos exemplos na minha opinião!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 7:
+  		escreva_lento("O nome correto para uma estrutura que está dentro da outra é:\n", 50)
+  		escreva_lento("[1] Aninhada\n", 50)
+  		escreva_lento("[2] Alinhada\n", 50)
+  		escreva_lento("[3] Atiçada\n", 50)
+  		leia (resposta)
+
+		se(resposta == 1){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Entendeu? Como se fosse um ninho!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 8:
+  		escreva_lento("Qual o nome da comida que liga e desliga?\n", 50)
+  		escreva_lento("[1] Bananada\n", 50)
+  		escreva_lento("[2] Estrogonoff\n", 50)
+  		escreva_lento("[3] Pizza requentada\n", 50)
+  		leia (resposta)
+
+		se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Hahaha, ON e OFF, sacou?\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 9:
+  		escreva_lento("Porque Jesus venceu a competição de programação mesmo quando a luz acabou?\n", 50)
+  		escreva_lento("[1] Porque ele não usou Portugol\n", 50)
+  		escreva_lento("[2] Porque Jesus é a luz\n", 50)
+  		escreva_lento("[3] Porque só Jesus salva\n", 50)
+  		leia (resposta)
+
+		se(resposta == 3 ou resposta == 1 ou resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Bem, todas as alternativas são condizentes pra mim rsrs\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 10:
+  		escreva_lento("Qual desses é um exemplo do que se pode criptografar?\n", 50)
+  		escreva_lento("[1] Uma informação ultra secreta da NASA\n", 50)
+  		escreva_lento("[2] Fotos de Gatinhos\n", 50)
+  		escreva_lento("[3] A cura do câncer\n", 50)
+  		leia (resposta)
+
+		se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Prioridades, né?\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 11:
+  		escreva_lento("Uma matriz é um(a):\n", 50)
+  		escreva_lento("[1] Chatice pra se aprender\n", 50)
+  		escreva_lento("[2] CQENENA (Conteúdo Que Eu Não Entendi Na Aula\n", 50)
+  		escreva_lento("[3] Vetor de vetores\n", 50)
+  		leia (resposta)
+
+		se(resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Logicamente é a opção 3, mas muita gente considera as outras alternativas...\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 12:
+  		escreva_lento("Uma função...\n", 50)
+  		escreva_lento("[1] recebe o que ela retorna\n", 50)
+  		escreva_lento("[2] tem sua função\n", 50)
+  		escreva_lento("[3] deve ser cumprida\n", 50)
+  		leia (resposta)
+
+		se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Isso deveria estar tatuado no corpo de todos os programadores!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 13:
+  		escreva_lento("Um cachorro que pesa mais de 20Kg late Woof e menos que isso late Au Au, segundo qual confederação?\n", 50)
+  		escreva_lento("[1] IBAMA\n", 50)
+  		escreva_lento("[2] Confederação Ibero-Americana de Cães\n", 50)
+  		escreva_lento("[3] ONU\n", 50)
+  		leia (resposta)
+
+		se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Eles que mandam né? Se dizeu tá dizido\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
   			casa = casa - 3
   		}
   	}
