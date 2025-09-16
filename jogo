@@ -1,5 +1,6 @@
 
 
+
 programa
 {
 	inclua biblioteca Util --> u
@@ -632,6 +633,112 @@ programa
 		se(resposta == 2){
   			escreva ("Resposta correta\n")
   			escreva_lento("Eles que mandam né? Se dizeu tá dizido\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 14:
+  		escreva_lento("Como se divide 5 ovelhas para dois Irmãos do Jorel?\n", 50)
+  		escreva_lento("[1] Duas ovelhas e meia pra cada um, porque a ovelha é uma analogia\n", 50)
+  		escreva_lento("[2] Não tem como, porque o Irmão do Jorel é alérgico a ovelhas\n", 50)
+  		escreva_lento("[3] Duas ovelhas pra cada um e sobra uma ovelha, porque não tem como repartir ovelhas\n", 50)
+  		leia (resposta)
+
+		se(resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Coitadinhas das ovelhas, elas não podem ser divididas\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 13:
+  		escreva_lento("Segundo o grande pensador Jefferson Chaves, tudo é possível...\n", 50)
+  		escreva_lento("[1] ...naquilo que nos fortalece\n", 50)
+  		escreva_lento("[2] ...e você manda ver\n", 50)
+  		escreva_lento("[3] ...com o poder da amizade\n", 50)
+  		leia (resposta)
+
+		se(resposta == 1){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Filipenses 4:13, pesquisa aí!\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 14:
+  		escreva_lento("Portugolmente falando, qual a sílaba tônica da palavra/biblioteca UTIL\n", 50)
+  		escreva_lento("[1] U - til\n", 50)
+  		escreva_lento("[2] u - TIL\n", 50)
+  		escreva_lento("[3] Nenhuma das alternativas\n", 50)
+  		leia (resposta)
+
+		se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Ela tem um nome carinhoso por ser tão UTIL rsrs\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 15:
+  		escreva_lento("Qual dessas funções abaixo uma IA não faz melhor que o professor Jefferson?\n", 50)
+  		escreva_lento("OBS: É necessário ter ido ao primeiro dia da semana acadêmica para responder essa pergunta", 50)
+  		escreva_lento("[1] Fazer um código em Python\n", 50)
+  		escreva_lento("[2] Planejar uma aula\n", 50)
+  		escreva_lento("[3] Mandar um passinho de dança country\n", 50)
+  		leia (resposta)
+
+		se(resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Quem viu, viu...\n", 50)
+  			resp = "CERTO"
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  		}
+
+  		caso 16:
+  		escreva_lento("Qual dessas atitudes você pode ter para tirar boas notas em Algoritmos e Linguagem de Programação?\n", 50)
+  		escreva_lento("[1] Ser educado(a), respeitoso(a) e dedicado(a)\n", 50)
+  		escreva_lento("[2] Ser fanboy do Neymar e nunca falar mal dele\n", 50)
+  		escreva_lento("[3] Se dedicar e tirar bons conceitos\n", 50)
+  		leia (resposta)
+
+		se(resposta == 1 ou resposta == 2 ou resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Todas as alternativas estão certas, certo?\n", 50)
   			resp = "CERTO"
   			prossiga()
   			u.aguarde(2000)
