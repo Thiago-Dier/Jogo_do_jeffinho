@@ -1,6 +1,7 @@
 programa
 {
-	inclua biblioteca Util --> u
+	
+inclua biblioteca Util --> u
 	inclua biblioteca Texto --> t
 	
 	cadeia opcao, armadura, posicao, duvida
@@ -35,7 +36,7 @@ programa
 			escreva_lento("Marino aproveitou esse tempo para refletir sobre a vida com todo seu conhecimento\n", 50)
 			escreva_lento("Agora voce ja pode ir pra historia principal\n", 50)
 		}
-
+		
 		u.aguarde(500)
 		limpa()
 		escreva_lento("Com o passar desses bimestres, o BWJOS ganhou uma segunda ediçao, e Marino ficou interessado nele\n", 50)
@@ -56,9 +57,7 @@ programa
 			escreva_lento("Você escolheu a armadura vermelha, boa escolha\n", 50)
 			escreva_lento("Você ganhou uma bala Halls, parabéns\n", 50)
 		}
-
-
-
+		
 		limpa()
 
 		escreva_lento("Agora que você ja tem sua armadura, vamos saber as regras do jogo:\n", 50)
@@ -82,6 +81,7 @@ programa
 			duracao = verdadeiro
 		}
 
+		
 		enquanto (duracao == verdadeiro) {
 			rodada()
 
@@ -320,8 +320,7 @@ programa
   		u.aguarde(500)
   		limpa()
   		pare
-  	}	
-  	
+  	}		
   }
 
   funcao rodada(){
@@ -350,7 +349,7 @@ programa
   	}
   }
 
-  funcao verifica_casa() {
+   funcao verifica_casa() {
 
   	se (casa % 2 == 0){
   		escreva_lento("Não ocorreu nada, podemos prosseguir\n", 50)
@@ -788,13 +787,18 @@ programa
   	}
   }
 
-	funcao prossiga(){
+  funcao prossiga(){
 		se ( resp == "CERTO" ){
 			rodada()
 		}
 	}
 
 	funcao batalha_final () {
+
+		se (hp == 0){
+			morre()
+		}
+		
 		se (casa == 19) {
 			batalha_final()
 		}
@@ -820,6 +824,8 @@ programa
 			escreva_lento("Nao interessa! Vamos para a batalha logo!\n", 50)
 		}
 		limpa()
+		escreva ("Sua vida: " + hp + "\n")
+		escreva ("Vida do Boss: " + vida_julio + "\n")
 		escreva_lento("Voce começa atacando! Qual ataque voce decide usar?\n", 50)
 		escreva_lento("[1] Soco mais ou menos\n", 50)
 		escreva_lento("[2] Lancamento de CD\n", 50)
@@ -846,7 +852,8 @@ programa
 		}
 
 		//ataque do julio
-		
+
+		limpa ()
 		escreva_lento("Agora voce desafia o Julio a jogar Pedra, Rosquinha e Quarta-Feira\n", 50)
 		escreva_lento("Funciona com uma especie de pedra, papel e tesoura, mas com possibilidades diferentes\n", 50)
 		escreva_lento("O que voce faz?\n", 50)
@@ -863,11 +870,175 @@ programa
 			escreva_lento("Voce perdeu 20 de HP", 50)
 			hp -= 20
 		}
-		
+
+		senao se ( opcao2 == 2 ){
+			escreva_lento("O Julio escolheu Rosquinha\n", 50)
+			escreva_lento("Você escolheu rosquinha também, logo, nada aconteceu\n", 50)
+			
+		}
+
+		senao se ( opcao2 == 3 ){
+			escreva_lento("O Julio escolheu Rosquinha\n", 50)
+			escreva_lento("Você escolheu quarta-feira, logo, você venceu\n", 50)
+			escreva_lento("Segundo as regras, as lojas de rosquinhas estão fechadas nas quartas-feiras\n", 50)
+			escreva_lento("Você causou 20 de dano", 50)
+			vida_julio -= 20
+		}
+
+		// ataque do julio
+
+		limpa ()
+		escreva_lento("Aguente firme, você está indo bem\n", 50)
+		escreva_lento("Você olha para o lado e vê uma tabela com portas lógicas\n", 50)
+		escreva_lento("Julio treme, pois sabe que se você acertar quais são as três portas lógicas, causará um grande dano (50)\n", 50)
+		escreva_lento("Primeira porta: qual é essa porta?\n\n", 50)
+
+	     escreva("                          ..@@@@@@@@@@@@%*-...                             \n")
+    		escreva("       ......             ..@-          ..*@@=.                            \n")
+   		escreva("       ..=%. ..............:@-            ...%@-.                          \n")
+    		escreva("      ..:%#+..-============+@-              ..+@=.                         \n")
+   		escreva("       .....              ..@-                .%@.               .....    \n")
+    		escreva("                          ..@-                 -@+::::::::::::.. .+:+..   \n")
+    		escreva("                          ..@-                .:@*------------:. .+-*..   \n")
+   		escreva("        .:..              ..@-                .%@:               ......   \n")
+    		escreva("       .:%*=..:-------------@-              ..+@+.                         \n")
+   		escreva("       .:#+- ..::::::::::::-@-             ..#@=.                          \n")
+   		escreva("       .....              ..@-        . ..=%@*.                            \n")
+    		escreva("                          ..@@@@@@@@@@@@@%+-.                              \n")
+    		escreva("                          ...............                                  \n")
+
+    		escreva_lento("[1] OR\n", 50)
+    		escreva_lento("[2] XOR\n", 50)
+    		escreva_lento("[3] AND \n", 50)
+    		inteiro opcao3
+    		inteiro dano_das_portas = 50
+    		leia (opcao3)
+
+    		se (opcao3 == 3){
+    			escreva_lento("Certo, vamos para a próxima\n", 50)
+    		}
+
+    		senao {
+    			escreva_lento("Errado, agora seu ataque irá dar 10 de dano a menos", 50)
+    			dano_das_portas -= 10
+    		}
+
+		limpa()
+		escreva_lento("Agora qual é essa porta?\n\n", 50)
+
+		 escreva("                                                         \n")
+   		 escreva("                     .=@@%%%%%%%%%@@@@@%+..              \n")
+    		 escreva("                       =@%.           .-#@@#:.            \n")
+    		 escreva("        ..::::::::::::::*@#.              :#@%=.          \n")
+   		 escreva("        .-+++++++++++++++#@=                .*@%-.        \n")
+    		 escreva("                         :@*.                .:#@*.       \n")
+   		 escreva("                         .%#:                  .*@%.      \n")
+    		 escreva("                         .#%-                    *@@@@@@@@@@@@@@@          \n")
+   		 escreva("                         .%#:                  .*@%.                       \n")
+   		 escreva("                        :@*.                .:#@*.                       \n")
+   		 escreva("       .-===============#@=                .+@%-.                   \n")
+   		 escreva("        .:--------------*@#.              :*@@=.                    \n")
+    		 escreva("                       -@%.           .-#@@%:.                      \n")
+    		 escreva("                     .=@@%%%%%%%%%@@@@@@*:.                         \n")
+    		 escreva("                    .:------------::..                              \n")
+
+    		escreva_lento("[1] OR\n", 50)
+    		escreva_lento("[2] XOR\n", 50)
+    		escreva_lento("[3] AND \n", 50)
+    		inteiro opcao4
+    		leia (opcao4)
+
+    		se ( opcao4 == 1 ){
+    			escreva_lento("Certo, vamos para a próxima\n", 50)
+    		}
+
+    		senao {
+    			escreva_lento("Errado, agora seu ataque irá dar 10 de dano a menos", 50)
+    			
+    		}
+
+    		limpa ()
+    		escreva_lento("Agora a última, qual é essa porta?\n\n", 50)
+
+    		escreva("                              :**********************+::.\n")
+   		escreva("                           -*  *=                         .#@#.\n")
+   		escreva("                            +*. %:                            .##.\n")
+    		escreva("                             %: .%                              .+*\n")
+    		escreva("                             :# .#=                               .%-\n")
+    		escreva("                             .@: -#.                               .**\n")
+    		escreva("                              ++ .%.                                 *-\n")
+    		escreva("                              .#  *-                                 .@-                          \n")
+    		escreva("                               #  ==                                  :#                          \n")
+    		escreva("                               #  ==                                   +%%%%%%%%%%%%@@+        \n")
+    		escreva("                               #  ==                                  .%\n")
+    		escreva("                               #  ==                                 .%-\n")
+    		escreva("                              .#  %:                                 +=\n")
+    		escreva("            :%................=* .%.                                =#.\n")
+    		escreva("            ..               .%- +*                                :*\n")
+    		escreva("                             :@ .%.                              .%=.\n")
+    		escreva("                            .%. #-                             .%+.\n")
+    		escreva("                           .**.*+                          .=%%:\n")
+    		escreva("                           ++ +@@@@@@@@@@@@@@@@@@@@@@@@@#+:.\n")
+
+    		escreva_lento("[1] OR\n", 50)
+    		escreva_lento("[2] XOR\n", 50)
+    		escreva_lento("[3] AND \n", 50)
+    		inteiro opcao5
+    		leia (opcao5)
+
+    		se ( opcao5 == 2 ){
+    			escreva_lento("Certo! Seu ataque irá dar ", 50)
+    			escreva(dano_das_portas, " no Julio\n")
+    			vida_julio -= dano_das_portas
+    		}
+
+    		senao {
+    			escreva_lento("Errado, seu ataque irá dar 10 de dano a menos", 50)
+    			dano_das_portas -= 10
+    			vida_julio -= dano_das_portas
+    		}
 	}
 
-
-  	funcao julio () {
+	funcao julio () {
   		
   	}
+
+  	funcao morre () {
+  		se (hp == 0 ou vida == 0){
+  			escreva_lento("Bem, parece que sua história chegou ao fim\n", 50)
+  			escreva_lento("Você agora perdeu seu título de girino\n", 50)
+  			escreva_lento("Não irá ter pra si o BWJOS e agora será esquecido\n\n", 50)
+
+			escreva(" _______  _______  __   __  _______    _______  __   __  _______  ______   \n")
+    			escreva("|       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  \n")
+    			escreva("|    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  \n")
+    			escreva("|   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ \n")
+   			escreva("|   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |\n")
+    			escreva("|   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |\n")
+    			escreva("|_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_| \n")
+
+  			duracao = falso
+  		}
+  	}
+
+  	funcao julio_derrotado () {
+  		se (vida_julio == 0){
+  			escreva_lento("Parabéns! Você derrotou o boss final!\n", 50)
+  			escreva_lento("Você realmente merece a segunda edição do BWJOS!\n", 50)
+  			escreva_lento("Agora aproveite o conhecimento eterno com essa frase cativante!\n", 50)
+  			final ()
+
+  			escreva_lento("Obrigado por jogar nosso jogo!\n", 50)
+  			escreva_lento("Créditos: Código: Thiago e Eduardo\n", 50)
+  			escreva_lento("          Ideias: Thiago e Eduardo\n", 50)
+  			escreva_lento("          Inspiração: Aulas do Professor Jefferson e Julio\n", 50)
+  			duracao = falso
+  			
+  		}
+  	}
+
+  	funcao final () {
+  		
+  	}
+	
 }
