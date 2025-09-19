@@ -1,7 +1,7 @@
 programa
 {
 	
-inclua biblioteca Util --> u
+	inclua biblioteca Util --> u
 	inclua biblioteca Texto --> t
 	
 	cadeia opcao, armadura, posicao, duvida
@@ -14,6 +14,7 @@ inclua biblioteca Util --> u
 	inteiro acertos = 0
 	inteiro hp = acertos * 10
 	cadeia resp
+	logico continuar_perguntando = verdadeiro
 	inteiro vida_julio = 100
 	
 	funcao inicio()
@@ -21,18 +22,18 @@ inclua biblioteca Util --> u
 		u.aguarde (500)
 		titulo()
 		u.aguarde (500)
-		escreva_lento("Você ja conhece a história do Enter the Gungeon Showcase Edition? (S) ou (N) \n", 50)
+		escreva_lento("Voce ja conhece a história do Enter the Gungeon Showcase Edition? (S) ou (N) \n", 50)
 		leia (opcao)
 
 		se (opcao == "s" ou opcao == "S"){
-			escreva_lento("\nEntendido, entao você ja pode ir pra história principal sem delongas", 50)
+			escreva_lento("\nEntendido, entao voce ja pode ir pra historia principal sem delongas", 50)
 		}
 
 		senao se (opcao == "n" ou opcao == "N"){
-			escreva_lento("Entendido, entao você precisa saber o que houve antes desse acontecimento\n", 50)
-			escreva_lento("Há dois bimestres atras, um soldado chamado Marino saiu em uma missao intergalatica\n", 50)
+			escreva_lento("Entendido, entao voce precisa saber o que houve antes desse acontecimento\n", 50)
+			escreva_lento("Ha dois bimestres atras, um soldado chamado Marino saiu em uma missao intergalatica\n", 50)
 			escreva_lento("Seu objetivo era achar BWJOS, o livro com apenas uma frase, em busca do conhecimento absoluto\n", 50)
-			escreva_lento("Após algumas batalhas epicas, Marino encontrou o livro e obteve o conhecimento absoluto\n", 50)
+			escreva_lento("Apos algumas batalhas epicas, Marino encontrou o livro e obteve o conhecimento absoluto\n", 50)
 			escreva_lento("Marino aproveitou esse tempo para refletir sobre a vida com todo seu conhecimento\n", 50)
 			escreva_lento("Agora voce ja pode ir pra historia principal\n", 50)
 		}
@@ -40,7 +41,7 @@ inclua biblioteca Util --> u
 		u.aguarde(500)
 		limpa()
 		escreva_lento("Com o passar desses bimestres, o BWJOS ganhou uma segunda ediçao, e Marino ficou interessado nele\n", 50)
-		escreva_lento("Mas para conseguir, Marino precisa jogar o jogo Tabuleiro da Vida, com desafios que vao além de sua sabedoria\n", 50)
+		escreva_lento("Mas para conseguir, Marino precisa jogar o jogo Tabuleiro da Vida, com desafios que vao alem de sua sabedoria\n", 50)
 		escreva_lento("Para isso, Marino deve escolher entre duas armaduras:\n", 50)
 		escreva_lento("Armadura Azul: Vantagem = +1 Vida\n", 50)
 		escreva_lento("Armadura Vermelha: Vantagem = Alguma coisa aleatória\n", 50)
@@ -48,36 +49,36 @@ inclua biblioteca Util --> u
 		leia (armadura)
 
 		se (armadura == "A" ou armadura == "a"){
-			escreva_lento("Você escolheu a armadura azul, boa escolha\n", 50)
+			escreva_lento("Voce escolheu a armadura azul, boa escolha\n", 50)
 			escreva_lento("Agora você tem uma vida a mais", 50)
 			vida += 1
 		}
 
 		senao se (armadura == "V" ou armadura == "v"){
-			escreva_lento("Você escolheu a armadura vermelha, boa escolha\n", 50)
-			escreva_lento("Você ganhou uma bala Halls, parabéns\n", 50)
+			escreva_lento("Voce escolheu a armadura vermelha, boa escolha\n", 50)
+			escreva_lento("Voce ganhou uma bala Halls, parabéns\n", 50)
 		}
 		
 		limpa()
 
-		escreva_lento("Agora que você ja tem sua armadura, vamos saber as regras do jogo:\n", 50)
-		escreva_lento("1°: O jogo terá 25 casas a serem andadas, você anda conforme o numero do dado;\n", 50) u.aguarde(200)
-		escreva_lento("2°: Se você cair em uma casa de numero par, nada acontece e você joga novamente;\n", 50) u.aguarde(200)
-		escreva_lento("3°: Se você cair em uma casa de numero impar, tera que responder uma pergunta;\n", 50) u.aguarde(200)
-		escreva_lento("4°: Se você errar a pergunta, voce volta 3 casas e perde uma vida;\n", 50) u.aguarde(200)
-		escreva_lento("5°: Se você chegar na casa de numero 19, tera que enfrentar o chefao final;\n", 50) u.aguarde(200)
-		escreva_lento("6°: Caso perca todas as suas vidas, você morre e será esquecido para sempre;\n", 50) u.aguarde(200)
-		escreva_lento("7°: Se você ganhar, tera para você a segunda edição do BWJOS;\n", 50) u.aguarde(200)
-		escreva_lento("Alguma dúvida? [S]im ou [N]ao ", 50) u.aguarde(200)
+		escreva_lento("Agora que voce ja tem sua armadura, vamos saber as regras do jogo:\n", 15)
+		escreva_lento("1°: O jogo tera 25 casas a serem andadas, voce anda conforme o numero do dado;\n", 15) u.aguarde(200)
+		escreva_lento("2°: Se voce cair em uma casa de numero par, nada acontece e você joga novamente;\n", 15) u.aguarde(200)
+		escreva_lento("3°: Se voce cair em uma casa de numero impar, tera que responder uma pergunta;\n", 15) u.aguarde(200)
+		escreva_lento("4°: Se voce errar a pergunta, voce volta 3 casas e perde uma vida;\n", 15) u.aguarde(200)
+		escreva_lento("5°: Se voce chegar na casa de numero 19, tera que enfrentar o chefao final;\n", 15) u.aguarde(200)
+		escreva_lento("6°: Caso perca todas as suas vidas, voce morre e será esquecido para sempre;\n", 15) u.aguarde(200)
+		escreva_lento("7°: Se voce ganhar, tera para voce a segunda ediçao do BWJOS;\n", 150) u.aguarde(200)
+		escreva_lento("Alguma duvida? [S]im ou [N]ao ", 15) u.aguarde(200)
 		leia (duvida)
 
 		se (duvida == "S" ou duvida == "s"){
-			 escreva_lento ("Nâo importa, vamos logo para o jogo\n", 50)
+			 escreva_lento ("Nao importa, vamos logo para o jogo\n", 50)
 			 duracao = verdadeiro
 		}
 
 		senao se (duvida == "N" ou duvida == "n"){
-			escreva_lento ("Ótimo! Entao vamos para o jogo\n", 50)
+			escreva_lento ("Otimo! Entao vamos para o jogo\n", 50)
 			duracao = verdadeiro
 		}
 
@@ -85,12 +86,8 @@ inclua biblioteca Util --> u
 		enquanto (duracao == verdadeiro) {
 			rodada()
 
-			se ( casa >= 25 ){
-				duracao = falso
-			}
-
 			se ( duracao == falso ){
-				escreva_lento("Parabéns! Voce Ganhou!", 50)
+				pare
 			}
 		}
 		
@@ -105,6 +102,8 @@ inclua biblioteca Util --> u
 
 	funcao titulo() {
 
+
+		u.aguarde(2000)
 	}
 
 	funcao joga_dado1() {
@@ -133,7 +132,7 @@ inclua biblioteca Util --> u
    escreva("@@:                                      :@@\n")
    escreva(" @@#:....      ..................      :#@%-\n")
    escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
-   u.aguarde(500)
+   u.aguarde(2000)
   }
 
   	funcao joga_dado2() {
@@ -162,7 +161,7 @@ inclua biblioteca Util --> u
    escreva("@@:                                      :@@\n")
    escreva(" @@#:....      ..................      :#@%-\n")
    escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
-   u.aguarde(500)
+   u.aguarde(2000)
   }
 
   	funcao joga_dado3() {
@@ -191,7 +190,7 @@ inclua biblioteca Util --> u
    escreva("@@:                                      :@@\n")
    escreva(" @@#:....      ..................      :#@%-\n")
    escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
-   u.aguarde(500)
+   u.aguarde(2000)
   }
 
   	funcao joga_dado4() {
@@ -220,7 +219,7 @@ inclua biblioteca Util --> u
    escreva("@@:    ..=*+:.                .:+*=..    :@@\n")
    escreva(" @@#:....      ..................      :#@%-\n")
    escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
-   u.aguarde(500)
+   u.aguarde(2000)
   }
 
   funcao joga_dado5() {
@@ -249,7 +248,7 @@ inclua biblioteca Util --> u
    escreva("@@:    ..=*+:.                .:+*=..    :@@\n")
    escreva(" @@#:....      ..................      :#@%-\n")
    escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: \n")
-   u.aguarde(500)
+   u.aguarde(2000)
   }
 
   	funcao joga_dado6() {
@@ -278,7 +277,7 @@ inclua biblioteca Util --> u
    escreva("@@:    ..=*+:.                .:+*=..    :@@\n")
    escreva(" @@#:....      ..................      :#@%-\n")
    escreva("   @@@@@@@@@@@@@@%@%@@@@@@@@@@@@@@@@@@@@@: .\n")
-   u.aguarde(500)
+   u.aguarde(2000)
   }
 
   funcao lancamento() {
@@ -324,12 +323,13 @@ inclua biblioteca Util --> u
   }
 
   funcao rodada(){
-  	escreva_lento("Você tem ", 50)
+  	limpa()
+  	escreva_lento("Voce tem ", 50)
   	escreva(vida)
   	escreva_lento(" vidas restantes\n", 50)
   	escreva_lento("Voce esta na posicao ", 50)
   	escreva(casa ,"\n")
-  	escreva_lento("Você joga o dado\n", 50)
+  	escreva_lento("Voce joga o dado\n", 50)
   	lancamento()
   	escreva_lento("Voce tirou ", 50)
   	escreva(dado)
@@ -338,6 +338,11 @@ inclua biblioteca Util --> u
   	limpa()
   	u.aguarde(500)
   	verifica_casa()
+
+  	se ( casa >= 25){
+  		duracao = falso
+  		final()
+  	}
 
   	se ( cas == 1 ) {
   		rodada()
@@ -352,12 +357,12 @@ inclua biblioteca Util --> u
    funcao verifica_casa() {
 
   	se (casa % 2 == 0){
-  		escreva_lento("Não ocorreu nada, podemos prosseguir\n", 50)
+  		escreva_lento("Nao ocorreu nada, podemos prosseguir\n", 50)
   		 cas = 1
   	}
 
   	senao {
-  		escreva_lento("Agora você terá que responder uma pergunta\n", 50)
+  		escreva_lento("Agora voce tera que responder uma pergunta\n", 50)
   		 cas = 2
   		
   	}
@@ -365,12 +370,15 @@ inclua biblioteca Util --> u
   }
 
   funcao pergunte(){
-  	inteiro pergunta = u.sorteia(1, 16)
+  	
+  	inteiro pergunta = u.sorteia(1, 18)
   	inteiro resposta
+
+  
   	escolha (pergunta) {
 
   		caso 1:
-  		escreva_lento("Qual opção abaixo nunca devemos escrever uma váriavel?\n", 50)
+  		escreva_lento("Qual opçao abaixo nunca devemos escrever uma variavel?\n", 50)
   		escreva_lento("[1] dias_contados\n", 50)
   		escreva_lento("[2] salamesadia\n", 50)
   		escreva_lento("[3] nomeUsuario\n", 50)
@@ -378,7 +386,8 @@ inclua biblioteca Util --> u
 
   		 se (resposta == 2){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Essa foi fácil!\n", 50)
+  			escreva_lento("Essa foi facil!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -395,13 +404,14 @@ inclua biblioteca Util --> u
   		caso 2:
   		escreva_lento("Na atividade 3 do 2° bimestre, na questao 12, que alimento custava 1000 reais?\n", 50)
   		escreva_lento("[1] Semente dos Deuses\n", 50)
-  		escreva_lento("[2] Hambúrguer de Siri\n", 50)
+  		escreva_lento("[2] Hamburguer de Siri\n", 50)
   		escreva_lento("[3] Sanduche Supremo\n", 50)
   		leia (resposta)
 
   		se (resposta == 1){
   			escreva ("Resposta correta\n")
-  			escreva_lento("É um bom preço não acha?\n", 50)
+  			escreva_lento("Eh um bom preço não acha?\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -426,6 +436,7 @@ inclua biblioteca Util --> u
   		se (resposta == 3){
   			escreva ("Resposta correta\n")
   			escreva_lento("Que nome fofo XD!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -448,7 +459,8 @@ inclua biblioteca Util --> u
 
   		 se(resposta == 2){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Hahaha essa é a melhor piada!\n", 50)
+  			escreva_lento("Hahaha essa eh a melhor piada!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -466,12 +478,13 @@ inclua biblioteca Util --> u
   		escreva_lento("Para saber exatamente como um codigo esta sendo executado, usamos uma ferramenta denominada de:\n", 50)
   		escreva_lento("[1] Sapatoviski\n", 50)
   		escreva_lento("[2] Funcao Percorrer Código\n", 50)
-  		escreva_lento("[3] Olhômetro\n", 50)
+  		escreva_lento("[3] Olhometro\n", 50)
   		leia (resposta)
 
   		 se(resposta == 1){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Ninguém supera ele!\n", 50)
+  			escreva_lento("Ninguem supera ele!\n", 50)
+  			u.aguarde(700)
   			acertos ++
   			resp = "CERTO"
   			prossiga()
@@ -494,7 +507,8 @@ inclua biblioteca Util --> u
 
 		se(resposta == 3){
   			escreva ("Resposta correta\n")
-  			escreva_lento("São ótimos exemplos na minha opinião!\n", 50)
+  			escreva_lento("Sao otimos exemplos na minha opiniao!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -509,7 +523,7 @@ inclua biblioteca Util --> u
   		}
 
   		caso 7:
-  		escreva_lento("O nome correto para uma estrutura que está dentro da outra é:\n", 50)
+  		escreva_lento("O nome correto para uma estrutura que esta dentro da outra eh:\n", 50)
   		escreva_lento("[1] Aninhada\n", 50)
   		escreva_lento("[2] Alinhada\n", 50)
   		escreva_lento("[3] Atiçada\n", 50)
@@ -518,6 +532,7 @@ inclua biblioteca Util --> u
 		se(resposta == 1){
   			escreva ("Resposta correta\n")
   			escreva_lento("Entendeu? Como se fosse um ninho!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -541,6 +556,7 @@ inclua biblioteca Util --> u
 		se(resposta == 2){
   			escreva ("Resposta correta\n")
   			escreva_lento("Hahaha, ON e OFF, sacou?\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -555,15 +571,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 9:
-  		escreva_lento("Porque Jesus venceu a competição de programação mesmo quando a luz acabou?\n", 50)
+  		escreva_lento("Porque Jesus venceu a competiçao de programação mesmo quando a luz acabou?\n", 50)
   		escreva_lento("[1] Porque ele não usou Portugol\n", 50)
-  		escreva_lento("[2] Porque Jesus é a luz\n", 50)
-  		escreva_lento("[3] Porque só Jesus salva\n", 50)
+  		escreva_lento("[2] Porque Jesus eh a luz\n", 50)
+  		escreva_lento("[3] Porque soh Jesus salva\n", 50)
   		leia (resposta)
 
 		se(resposta == 3 ou resposta == 1 ou resposta == 2){
   			escreva ("Resposta correta\n")
   			escreva_lento("Bem, todas as alternativas são condizentes pra mim rsrs\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -578,15 +595,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 10:
-  		escreva_lento("Qual desses é um exemplo do que se pode criptografar?\n", 50)
+  		escreva_lento("Qual desses eh um exemplo do que se pode criptografar?\n", 50)
   		escreva_lento("[1] Uma informação ultra secreta da NASA\n", 50)
   		escreva_lento("[2] Fotos de Gatinhos\n", 50)
-  		escreva_lento("[3] A cura do câncer\n", 50)
+  		escreva_lento("[3] A cura do cancer\n", 50)
   		leia (resposta)
 
 		se(resposta == 2){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Prioridades, né?\n", 50)
+  			escreva_lento("Prioridades, neh?\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -601,15 +619,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 11:
-  		escreva_lento("Uma matriz é um(a):\n", 50)
+  		escreva_lento("Uma matriz eh um(a):\n", 50)
   		escreva_lento("[1] Chatice pra se aprender\n", 50)
-  		escreva_lento("[2] CQENENA (Conteúdo Que Eu Não Entendi Na Aula\n", 50)
+  		escreva_lento("[2] CQENENA (Conteúdo Que Eu Nao Entendi Na Aula\n", 50)
   		escreva_lento("[3] Vetor de vetores\n", 50)
   		leia (resposta)
 
 		se(resposta == 3){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Logicamente é a opção 3, mas muita gente considera as outras alternativas...\n", 50)
+  			escreva_lento("Logicamente eh a opção 3, mas muita gente considera as outras alternativas...\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -624,15 +643,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 12:
-  		escreva_lento("Uma função...\n", 50)
+  		escreva_lento("Uma funçao...\n", 50)
   		escreva_lento("[1] recebe o que ela retorna\n", 50)
-  		escreva_lento("[2] tem sua função\n", 50)
+  		escreva_lento("[2] tem sua funçao\n", 50)
   		escreva_lento("[3] deve ser cumprida\n", 50)
   		leia (resposta)
 
 		se(resposta == 2){
   			escreva ("Resposta correta\n")
   			escreva_lento("Isso deveria estar tatuado no corpo de todos os programadores!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -647,15 +667,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 13:
-  		escreva_lento("Um cachorro que pesa mais de 20Kg late Woof e menos que isso late Au Au, segundo qual confederação?\n", 50)
+  		escreva_lento("Um cachorro que pesa mais de 20Kg late Woof e menos que isso late Au Au, segundo qual confederaçao?\n", 50)
   		escreva_lento("[1] IBAMA\n", 50)
-  		escreva_lento("[2] Confederação Ibero-Americana de Cães\n", 50)
+  		escreva_lento("[2] Confederaçao Ibero-Americana de Caes\n", 50)
   		escreva_lento("[3] ONU\n", 50)
   		leia (resposta)
 
 		se(resposta == 2){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Eles que mandam né? Se dizeu tá dizido\n", 50)
+  			escreva_lento("Eles que mandam neh? Se dizeu tá dizido\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -670,61 +691,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 14:
-  		escreva_lento("Como se divide 5 ovelhas para dois Irmãos do Jorel?\n", 50)
-  		escreva_lento("[1] Duas ovelhas e meia pra cada um, porque a ovelha é uma analogia\n", 50)
-  		escreva_lento("[2] Não tem como, porque o Irmão do Jorel é alérgico a ovelhas\n", 50)
-  		escreva_lento("[3] Duas ovelhas pra cada um e sobra uma ovelha, porque não tem como repartir ovelhas\n", 50)
+  		escreva_lento("Como se divide 5 ovelhas para dois Irmaos do Jorel?\n", 50)
+  		escreva_lento("[1] Duas ovelhas e meia pra cada um, porque a ovelha eh uma analogia\n", 50)
+  		escreva_lento("[2] Não tem como, porque o Irmao do Jorel é alérgico a ovelhas\n", 50)
+  		escreva_lento("[3] Duas ovelhas pra cada um e sobra uma ovelha, porque nao tem como repartir ovelhas\n", 50)
   		leia (resposta)
 
 		se(resposta == 3){
   			escreva ("Resposta correta\n")
   			escreva_lento("Coitadinhas das ovelhas, elas não podem ser divididas\n", 50)
-  			resp = "CERTO"
-  			acertos ++
-  			prossiga()
-  			u.aguarde(2000)
-  		}
-
-  		senao {
-  			escreva ("Resposta incorreta\n")
-  			resp = "CERTO"
-  			casa = casa - 3
-  			vida --
-  		}
-
-  		caso 13:
-  		escreva_lento("Segundo o grande pensador Jefferson Chaves, tudo é possível...\n", 50)
-  		escreva_lento("[1] ...naquilo que nos fortalece\n", 50)
-  		escreva_lento("[2] ...e você manda ver\n", 50)
-  		escreva_lento("[3] ...com o poder da amizade\n", 50)
-  		leia (resposta)
-
-		se(resposta == 1){
-  			escreva ("Resposta correta\n")
-  			escreva_lento("Filipenses 4:13, pesquisa aí!\n", 50)
-  			resp = "CERTO"
-  			acertos ++
-  			prossiga()
-  			u.aguarde(2000)
-  		}
-
-  		senao {
-  			escreva ("Resposta incorreta\n")
-  			resp = "CERTO"
-  			casa = casa - 3
-  			vida --
-  		}
-
-  		caso 14:
-  		escreva_lento("Portugolmente falando, qual a sílaba tônica da palavra/biblioteca UTIL\n", 50)
-  		escreva_lento("[1] U - til\n", 50)
-  		escreva_lento("[2] u - TIL\n", 50)
-  		escreva_lento("[3] Nenhuma das alternativas\n", 50)
-  		leia (resposta)
-
-		se(resposta == 2){
-  			escreva ("Resposta correta\n")
-  			escreva_lento("Ela tem um nome carinhoso por ser tão UTIL rsrs\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -739,16 +715,16 @@ inclua biblioteca Util --> u
   		}
 
   		caso 15:
-  		escreva_lento("Qual dessas funções abaixo uma IA não faz melhor que o professor Jefferson?\n", 50)
-  		escreva_lento("OBS: É necessário ter ido ao primeiro dia da semana acadêmica para responder essa pergunta", 50)
-  		escreva_lento("[1] Fazer um código em Python\n", 50)
-  		escreva_lento("[2] Planejar uma aula\n", 50)
-  		escreva_lento("[3] Mandar um passinho de dança country\n", 50)
+  		escreva_lento("Segundo o grande pensador Jefferson Chaves, tudo eh possivel...\n", 50)
+  		escreva_lento("[1] ...naquilo que nos fortalece\n", 50)
+  		escreva_lento("[2] ...e você manda ver\n", 50)
+  		escreva_lento("[3] ...com o poder da amizade\n", 50)
   		leia (resposta)
 
-		se(resposta == 3){
+		se(resposta == 1){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Quem viu, viu...\n", 50)
+  			escreva_lento("Filipenses 4:13, pesquisa ai!\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -763,6 +739,55 @@ inclua biblioteca Util --> u
   		}
 
   		caso 16:
+  		escreva_lento("Portugolmente falando, qual a silaba tonica da palavra/biblioteca UTIL\n", 50)
+  		escreva_lento("[1] U - til\n", 50)
+  		escreva_lento("[2] u - TIL\n", 50)
+  		escreva_lento("[3] Nenhuma das alternativas\n", 50)
+  		leia (resposta)
+
+		se(resposta == 2){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Ela tem um nome carinhoso por ser tao UTIL rsrs\n", 50)
+  			u.aguarde(700)
+  			resp = "CERTO"
+  			acertos ++
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  			vida --
+  		}
+
+  		caso 17:
+  		escreva_lento("Qual dessas funçoes abaixo uma IA não faz melhor que o professor Jefferson?\n", 50)
+  		escreva_lento("OBS: É necessario ter ido ao primeiro dia da semana acadamica para responder essa pergunta\n", 50)
+  		escreva_lento("[1] Fazer um codigo em Python\n", 50)
+  		escreva_lento("[2] Planejar uma aula\n", 50)
+  		escreva_lento("[3] Mandar um passinho de dança country\n", 50)
+  		leia (resposta)
+
+		se(resposta == 3){
+  			escreva ("Resposta correta\n")
+  			escreva_lento("Quem viu, viu...\n", 50)
+  			u.aguarde(700)
+  			resp = "CERTO"
+  			acertos ++
+  			prossiga()
+  			u.aguarde(2000)
+  		}
+
+  		senao {
+  			escreva ("Resposta incorreta\n")
+  			resp = "CERTO"
+  			casa = casa - 3
+  			vida --
+  		}
+
+  		caso 18:
   		escreva_lento("Qual dessas atitudes você pode ter para tirar boas notas em Algoritmos e Linguagem de Programação?\n", 50)
   		escreva_lento("[1] Ser educado(a), respeitoso(a) e dedicado(a)\n", 50)
   		escreva_lento("[2] Ser fanboy do Neymar e nunca falar mal dele\n", 50)
@@ -771,7 +796,8 @@ inclua biblioteca Util --> u
 
 		se(resposta == 1 ou resposta == 2 ou resposta == 3){
   			escreva ("Resposta correta\n")
-  			escreva_lento("Todas as alternativas estão certas, certo?\n", 50)
+  			escreva_lento("Todas as alternativas estao certas, certo?\n", 50)
+  			u.aguarde(700)
   			resp = "CERTO"
   			acertos ++
   			prossiga()
@@ -800,6 +826,7 @@ inclua biblioteca Util --> u
 		}
 		
 		se (casa == 19) {
+			continuar_perguntando = falso
 			batalha_final()
 		}
 
@@ -873,25 +900,25 @@ inclua biblioteca Util --> u
 
 		senao se ( opcao2 == 2 ){
 			escreva_lento("O Julio escolheu Rosquinha\n", 50)
-			escreva_lento("Você escolheu rosquinha também, logo, nada aconteceu\n", 50)
+			escreva_lento("Voce escolheu rosquinha tambem, logo, nada aconteceu\n", 50)
 			
 		}
 
 		senao se ( opcao2 == 3 ){
 			escreva_lento("O Julio escolheu Rosquinha\n", 50)
-			escreva_lento("Você escolheu quarta-feira, logo, você venceu\n", 50)
-			escreva_lento("Segundo as regras, as lojas de rosquinhas estão fechadas nas quartas-feiras\n", 50)
-			escreva_lento("Você causou 20 de dano", 50)
+			escreva_lento("Voce escolheu quarta-feira, logo, voce venceu\n", 50)
+			escreva_lento("Segundo as regras, as lojas de rosquinhas estao fechadas nas quartas-feiras\n", 50)
+			escreva_lento("Voce causou 20 de dano", 50)
 			vida_julio -= 20
 		}
 
 		// ataque do julio
 
 		limpa ()
-		escreva_lento("Aguente firme, você está indo bem\n", 50)
-		escreva_lento("Você olha para o lado e vê uma tabela com portas lógicas\n", 50)
-		escreva_lento("Julio treme, pois sabe que se você acertar quais são as três portas lógicas, causará um grande dano (50)\n", 50)
-		escreva_lento("Primeira porta: qual é essa porta?\n\n", 50)
+		escreva_lento("Aguente firme, voce está indo bem\n", 50)
+		escreva_lento("Voce olha para o lado e vê uma tabela com portas logicas\n", 50)
+		escreva_lento("Julio treme, pois sabe que se voce acertar quais são as tres portas lógicas, causara um grande dano (50)\n", 50)
+		escreva_lento("Primeira porta: qual eh essa porta?\n\n", 50)
 
 	     escreva("                          ..@@@@@@@@@@@@%*-...                             \n")
     		escreva("       ......             ..@-          ..*@@=.                            \n")
@@ -915,16 +942,16 @@ inclua biblioteca Util --> u
     		leia (opcao3)
 
     		se (opcao3 == 3){
-    			escreva_lento("Certo, vamos para a próxima\n", 50)
+    			escreva_lento("Certo, vamos para a proxima\n", 50)
     		}
 
     		senao {
-    			escreva_lento("Errado, agora seu ataque irá dar 10 de dano a menos", 50)
+    			escreva_lento("Errado, agora seu ataque ira dar 10 de dano a menos", 50)
     			dano_das_portas -= 10
     		}
 
 		limpa()
-		escreva_lento("Agora qual é essa porta?\n\n", 50)
+		escreva_lento("Agora qual eh essa porta?\n\n", 50)
 
 		 escreva("                                                         \n")
    		 escreva("                     .=@@%%%%%%%%%@@@@@%+..              \n")
@@ -949,16 +976,17 @@ inclua biblioteca Util --> u
     		leia (opcao4)
 
     		se ( opcao4 == 1 ){
-    			escreva_lento("Certo, vamos para a próxima\n", 50)
+    			escreva_lento("Certo, vamos para a proxima\n", 50)
     		}
 
     		senao {
-    			escreva_lento("Errado, agora seu ataque irá dar 10 de dano a menos", 50)
+    			escreva_lento("Errado, agora seu ataque ira dar 10 de dano a menos", 50)
+    			dano_das_portas -= 10
     			
     		}
 
     		limpa ()
-    		escreva_lento("Agora a última, qual é essa porta?\n\n", 50)
+    		escreva_lento("Agora a ultima, qual eh essa porta?\n\n", 50)
 
     		escreva("                              :**********************+::.\n")
    		escreva("                           -*  *=                         .#@#.\n")
@@ -987,27 +1015,29 @@ inclua biblioteca Util --> u
     		leia (opcao5)
 
     		se ( opcao5 == 2 ){
-    			escreva_lento("Certo! Seu ataque irá dar ", 50)
+    			escreva_lento("Certo! Seu ataque ira dar ", 50)
     			escreva(dano_das_portas, " no Julio\n")
     			vida_julio -= dano_das_portas
     		}
 
     		senao {
-    			escreva_lento("Errado, seu ataque irá dar 10 de dano a menos", 50)
+    			escreva_lento("Errado, seu ataque ira dar 10 de dano a menos", 50)
     			dano_das_portas -= 10
     			vida_julio -= dano_das_portas
     		}
 	}
 
 	funcao julio () {
-  		
+
+
+  		u.aguarde(2000)
   	}
 
   	funcao morre () {
   		se (hp == 0 ou vida == 0){
-  			escreva_lento("Bem, parece que sua história chegou ao fim\n", 50)
-  			escreva_lento("Você agora perdeu seu título de girino\n", 50)
-  			escreva_lento("Não irá ter pra si o BWJOS e agora será esquecido\n\n", 50)
+  			escreva_lento("Bem, parece que sua historia chegou ao fim\n", 50)
+  			escreva_lento("Voce agora perdeu seu título de girino\n", 50)
+  			escreva_lento("Não ira ter pra si o BWJOS e agora sera esquecido\n\n", 50)
 
 			escreva(" _______  _______  __   __  _______    _______  __   __  _______  ______   \n")
     			escreva("|       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  \n")
@@ -1023,13 +1053,14 @@ inclua biblioteca Util --> u
 
   	funcao julio_derrotado () {
   		se (vida_julio == 0){
-  			escreva_lento("Parabéns! Você derrotou o boss final!\n", 50)
-  			escreva_lento("Você realmente merece a segunda edição do BWJOS!\n", 50)
+  			escreva_lento("Parabens! Você derrotou o boss final!\n", 50)
+  			escreva_lento("Voce realmente merece a segunda ediçao do BWJOS!\n", 50)
   			escreva_lento("Agora aproveite o conhecimento eterno com essa frase cativante!\n", 50)
+  			
   			final ()
 
   			escreva_lento("Obrigado por jogar nosso jogo!\n", 50)
-  			escreva_lento("Créditos: Código: Thiago e Eduardo\n", 50)
+  			escreva_lento("Creditos: Codigo: Thiago e Eduardo\n", 50)
   			escreva_lento("          Ideias: Thiago e Eduardo\n", 50)
   			escreva_lento("          Inspiração: Aulas do Professor Jefferson e Julio\n", 50)
   			duracao = falso
@@ -1038,6 +1069,8 @@ inclua biblioteca Util --> u
   	}
 
   	funcao final () {
+  		escreva_lento("A frase contida na segunda edição do BWJOS é:\n", 50)
+  		escreva_lento("O 1° TDS pede desculpas ao Professor Jefferson!", 50)
   		
   	}
 	
