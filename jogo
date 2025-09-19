@@ -1,3 +1,4 @@
+
 programa
 {
 	
@@ -824,13 +825,8 @@ programa
 		se (hp == 0){
 			morre()
 		}
-		
-		se (casa == 19) {
-			continuar_perguntando = falso
-			batalha_final()
-		}
 
-		escreva_lento("Voce caiu na casa 19, entao tera que enfrentar o boss final hahaha\n", 50)
+		escreva_lento("Agora voce tera que batalhar!!\n", 50)
 		escreva_lento("Se lembra dessa pessoa?\n\n", 50)
 		limpa ()
 		julio ()
